@@ -1,7 +1,10 @@
 node {
    withEnv(["PATH+MAVEN=${tool 'apache-maven-3.5.3'}bin"]) {
    stage('Preparation') { 
-      git 'https://github.com/pkainulainen/spring-mvc-test-examples.git'
+	checkout scm
+	
+	}
+
     
    }
    stage('Build') {

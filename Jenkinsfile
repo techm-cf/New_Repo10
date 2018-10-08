@@ -13,7 +13,7 @@ node {
                 sh 'mvn -f controllers-unittest/pom.xml clean package sonar:sonar'
             }
     stage('Artifacts to Nexus') {
-     sh 'curl -v --user admin:admin123 --upload-file /var/lib/jenkins/workspace/AH_pipeline/controllers-unittest/target/spring-test-mvc-configuration.war http://nexus.app-cloudfoundry.com/repository/New_repo/'
+     sh 'curl -v --user admin:admin123 --upload-file /var/lib/jenkins/workspace/AH_pipeline/controllers-unittest/target/spring-test-mvc-configuration.war http://nexus.app-cloudfoundry.com/repository/maven-snapshots/'
 
    }
        stage('Deploy to CF') {

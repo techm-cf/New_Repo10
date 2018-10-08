@@ -17,7 +17,7 @@ node {
 
    }
        stage('Deploy to CF') {
-                pushToCloudFoundry cloudSpace: 'dev', credentialsId: 'b7c24062-6ea4-4876-89a1-96b3c2b430b2', manifestChoice: [manifestFile: '/var/lib/jenkins/workspace/AH_pipeline/manifest.yml'], organization: ('techm_dev'), selfSigned: ('true'), target: 'api.app-cloudfoundry.com'
+                pushToCloudFoundry cloudSpace: 'dev', credentialsId: 'b7c24062-6ea4-4876-89a1-96b3c2b430b2', manifestChoice: [manifestFile: '/var/lib/jenkins/workspace/AH_org_Pipeline_proj_master-F76DXQ3ZDGFQFXUIIBBJ23UOA5VJH6UF5C2QQGRZVKP5KGFQOI4Q/manifest.yml'], organization: ('techm_dev'), selfSigned: ('true'), target: 'api.app-cloudfoundry.com'
         
     }
 }

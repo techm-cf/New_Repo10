@@ -2,6 +2,7 @@ node {
    withEnv(["PATH+MAVEN=${tool 'apache-maven-3.5.3'}bin"]) {
    stage('Preparation') { 
 	checkout scm
+	   checkout scm
 	
 	}
    stage('Build') {

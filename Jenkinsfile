@@ -14,11 +14,11 @@ node {
                 sh 'mvn -f controllers-unittest/pom.xml clean package sonar:sonar'
             }
     stage('Artifacts to Nexus') {
-     sh 'curl -v --user admin:admin123 --upload-file /var/lib/jenkins/workspace/echm-cf_demo6feb3.44_master-KDUP4CIJMJSWQN5INLEAFQ2OBYH72T4D7YXRQOXPUPRVGZHXVDIA/controllers-unittest/target/spring-test-mvc-configuration.war http://nexus.techm-cf.com/repository/New_repo/'
+     sh 'curl -v --user admin:admin123 --upload-file /var/lib/jenkins/workspace/techm-cf_New_Repo10_master-35L3B3FZRMVEQQCJEQRDWGG6Y4BYWCBAECXZZUB5CK5LIHQPYKUQ/controllers-unittest/target/spring-test-mvc-configuration.war http://nexus.techm-cf.com/repository/New_repo/'
 
    }
        stage('Deploy to CF') {
-                pushToCloudFoundry cloudSpace: 'dev', credentialsId: 'b7c24062-6ea4-4876-89a1-96b3c2b430b2', manifestChoice: [manifestFile: '/var/lib/jenkins/workspace/echm-cf_demo6feb3.44_master-KDUP4CIJMJSWQN5INLEAFQ2OBYH72T4D7YXRQOXPUPRVGZHXVDIA/manifest.yml'], organization: ('techm_dev'), selfSigned: ('true'), target: 'api.techm-cf.com'
+                pushToCloudFoundry cloudSpace: 'dev', credentialsId: 'b7c24062-6ea4-4876-89a1-96b3c2b430b2', manifestChoice: [manifestFile: '/var/lib/jenkins/workspace/techm-cf_New_Repo10_master-35L3B3FZRMVEQQCJEQRDWGG6Y4BYWCBAECXZZUB5CK5LIHQPYKUQ/manifest.yml'], organization: ('techm_dev'), selfSigned: ('true'), target: 'api.techm-cf.com'
         
     }
 }
